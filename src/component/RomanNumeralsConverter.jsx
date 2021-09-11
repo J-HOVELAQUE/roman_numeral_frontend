@@ -1,12 +1,14 @@
 import "./romanNumeralsConverterStyle.css";
 import { useState } from "react";
+import sendRomanNumeral from "../ajaxHandler/sendRomanNumeral.js";
 
 export default function RomanNumeralsConverter() {
   const [romanNumeral, setRomanNumeral] = useState("");
 
   const onSubmitRomanNumeral = (e) => {
     e.preventDefault();
-    console.log("VALUE",romanNumeral );
+    console.log("VALUE", romanNumeral);
+    sendRomanNumeral();
   }
 
   return (
