@@ -31,3 +31,8 @@
 .converter-button:hover {
   background-color: brown;
 }
+
+.result-zone {
+  color: red;
+  text-decoration: underline;
+}
