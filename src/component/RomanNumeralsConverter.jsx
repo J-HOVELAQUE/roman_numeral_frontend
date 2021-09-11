@@ -4,11 +4,12 @@ import sendRomanNumeral from "../ajaxHandler/sendRomanNumeral.js";
 
 export default function RomanNumeralsConverter() {
   const [romanNumeral, setRomanNumeral] = useState("");
+  const [result, setResult] = useState("")
 
-  const onSubmitRomanNumeral = (e) => {
+  const onSubmitRomanNumeral = async (e) => {
     e.preventDefault();
-    console.log("VALUE", romanNumeral);
-    sendRomanNumeral();
+    const arabValue = await sendRomanNumeral(romanNumeral);
+    setResult(arabValue);
   }
 
   return (
@@ -26,7 +27,7 @@ export default function RomanNumeralsConverter() {
         />
         <button className="converter-button">Convertir</button>
       </form>
-      <h3 className="result-zone">XV correspond à 15 en chiffres arabes</h3>
+      <h3 className="result-zone">{result}</h3>
     </div>
   )
 }
